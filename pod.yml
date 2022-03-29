@@ -1,0 +1,10 @@
+apiVersion: V1
+kind: pod
+metadata:
+  name: pod1
+spec:
+  containers:
+  - name: nginx-vishnu
+    image: nginx
+    ports:
+    -containerPort: 8080
