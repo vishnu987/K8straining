@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: python-helloworld-controller
+  labels:
+    app: python-helloworld
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: python-helloworld
+  template:
+    metadata:
+      labels:
+        app: python-helloworld
+    spec:
+      containers:
+      - name: k8s-python-demo
+        image: python-docker
+        imagePullPolicy: Never
+        ports:
+        - name: python-port
+          containerPort: 5000
